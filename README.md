@@ -144,7 +144,22 @@ This JSON is used to map your submission to the challenge - so please remember t
 # Other Concepts
 ### Evaluation Metrics
 
+The [forecast track score](#eqn-forecast-track-score), Score<sub>Forecast</sub>, is the average over all of the variables being forecast, of the normalized mean root mean square error (RMSE) of the forecasts made.
 
+<a name="eqn-forecast-track-score"></a>
+```math
+\textrm{Score}_{\textrm{Forecast}} = \frac{1}{V} \sum_v \left( \frac{\sum_{t=0}^{n-1} \sqrt{ \frac{1}{w} \sum_{\tau=1}^{w} \left(f^v_{t,\tau} - v_{t+\tau} \right)^2 } }{\sum_{t=0}^{n-1} v_t} \right)
+```
+
+> Where:
+> - $`t`$: Environment time step index;
+> - $`n`$: Total number of time steps, $`t`$, in 1 episode;
+> - $`\tau`$: Forecasting window time step index;
+> - $`w`$: Length of forecasting window (48hrs);
+> - $`b`$: Total number of buildings;
+> - $`v`$: Forecasting variable;
+> - $`V`$: Total number of variables to forecast ($`3b+3`$);
+> - $`f^v_{t,\tau}`$: Forecast of variable $`v`$ for time step $`t+\tau`$, made at time $`t`$;
 
 ### Time and compute constraints
 
