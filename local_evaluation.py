@@ -148,6 +148,14 @@ def evaluate(config):
                 for param in ['Solar_Generation','Carbon_Intensity']}
     }
 
+    results['Mean_Equipment_Eletric_Power'] = np.mean([results[b.name]['Equipment_Eletric_Power'] for b in env.buildings])
+    results['Mean_DHW_Heating'] =  np.mean([results[b.name]['DHW_Heating'] for b in env.buildings])
+    results['Mean_Cooling_Load'] =  np.mean([results[b.name]['Cooling_Load'] for b in env.buildings])
+
+    results['Mean_Forecast_NRMSE'] = np.mean([results[k] for k in 
+                                              ['Mean_Equipment_Eletric_Power','Mean_DHW_Heating','Mean_Cooling_Load']])
+
+
     print("=========================Forecast Quality Results=========================")
     print(json.dumps(results, indent=4))
     
