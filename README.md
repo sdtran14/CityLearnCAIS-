@@ -158,7 +158,7 @@ The [forecast track score](#eqn-forecast-track-score), Score<sub>Forecast</sub>,
 > - $`w`$: Length of forecasting window (48hrs);
 > - $`b`$: Total number of buildings;
 > - $`v`$: Forecasting variable;
-> - $`V`$: Total number of variables to forecast ($`3b+3`$);
+> - $`V`$: Total number of variables to forecast ($`3b+2`$);
 > - $`f^v_{t,\tau}`$: Forecast of variable $`v`$ for time step $`t+\tau`$, made at time $`t`$;
 
 ### Time and compute constraints
