@@ -117,7 +117,10 @@ class ExamplePredictor(BasePredictorModel):
                 'DHW_Heating': np.array(observations)[0][np.where(np.array(self.observation_names)[0] == 'dhw_demand')[0][i]],
                 'Cooling_Load': np.array(observations)[0][np.where(np.array(self.observation_names)[0] == 'cooling_demand')[0][i]]
                 } for i,b_name in enumerate(self.building_names)},
-            'Solar_Generation': np.array(observations)[0][np.where(np.array(self.observation_names)[0] == 'solar_generation')[0][0]]/self.b0_pv_capacity,
+            'Solar_Generation': np.array(observations)[0][np.where(np.array(self.observation_names)[0] == 'solar_generation')[0][0]]/self.b0_pv_capacity*1000,
+            # Note: the `solar_generation` observations are the kWh produced by the panels on each building in the preceeding hour.
+            # As we want to predict the normalised solar generation [W/kW] common to all buildings, we back-calculate this value using the
+            # first building; normalised solar generation [W/kW] = (building solar generation [kWh] / (building solar capacity [kW] * 1hr)) * 1000
             'Carbon_Intensity': np.array(observations)[0][np.where(np.array(self.observation_names)[0] == 'carbon_intensity')[0][0]]
         }
 
@@ -142,7 +145,7 @@ class ExamplePredictor(BasePredictorModel):
                     predictions_dict[b_name][load_type] = np.poly1d(np.polyfit([-1,0],[self.prev_vals[b_name][load_type],current_vals[b_name][load_type]],deg=1))(predict_inds)
 
             predictions_dict['Solar_Generation'] = np.poly1d(np.polyfit([-1,0],[self.prev_vals['Solar_Generation'],current_vals['Solar_Generation']],deg=1))(predict_inds)
-            predictions_dict['Carbon_Intensity'] = np.poly1d(np.polyfit([-1,0],[self.prev_vals['Solar_Generation'],current_vals['Carbon_Intensity']],deg=1))(predict_inds)
+            predictions_dict['Carbon_Intensity'] = np.poly1d(np.polyfit([-1,0],[self.prev_vals['Carbon_Intensity'],current_vals['Carbon_Intensity']],deg=1))(predict_inds)
 
         self.prev_vals = current_vals
         # ====================================================================
