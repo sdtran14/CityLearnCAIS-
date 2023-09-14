@@ -52,9 +52,10 @@ def create_citylearn_env(config):
         b0_pv_capacity = env.buildings[0].pv.nominal_power,
     )
 
-    # Turn off actions for all buildings (forecasting only).
+    # Turn off actions for all buildings and do not simulate power outage (forecasting only).
     for b in env.buildings:
         b.ignore_dynamics = True
+        b.simulate_power_outage = False
 
     return env, env_data
 
