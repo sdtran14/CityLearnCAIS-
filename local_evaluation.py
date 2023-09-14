@@ -25,6 +25,7 @@ class WrapperEnv:
     """
     def __init__(self, env_data):
         self.observation_names = env_data['observation_names']
+        self.action_names = env_data['action_names']
         self.observation_space = env_data['observation_space']
         self.action_space = env_data['action_space']
         self.time_steps = env_data['time_steps']
@@ -41,6 +42,7 @@ def create_citylearn_env(config):
 
     env_data = dict(
         observation_names = env.observation_names,
+        action_names = env.action_names,
         observation_space = env.observation_space,
         action_space = env.action_space,
         time_steps = env.time_steps,
