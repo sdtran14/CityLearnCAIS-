@@ -45,6 +45,7 @@ class ExamplePredictor(BasePredictorModel):
         self.num_buildings = env_data['num_buildings']
         self.building_names = env_data['building_names']
         self.observation_names = env_data['observation_names']
+        self.action_names = env_data['action_names']
         self.tau = tau
 
         # Load in pre-computed prediction model.
