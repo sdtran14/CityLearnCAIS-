@@ -1,3 +1,3 @@
-CityLearn==2.1b4
+CityLearn==2.1b5
 numpy
 tqdm
