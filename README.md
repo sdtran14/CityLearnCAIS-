@@ -42,14 +42,14 @@ The CityLearn Challenge 2023 is a two-track challenge where either track is inde
 
 ### Competition Phases
 
-<a name="phase-1"></a>Phase I (Warm Up Round, Aug 21 - Sep 18, 2023)
-This phase provides participants with an opportunity to familiarize themselves with the competition, CityLearn environment and raise issues bordering on the problem statement, source code, dataset quality and documentation to be addressed by the organizers.A solution example will also be provided so that participants can test the submission process and see their submissions show up on the leaderboard. The submissions and leaderboard in this phase are not taken into account during [Phase II](#phase-2) and selection of winners in [Phase III](#phase-3).
+## <a name="phase-1"></a>Phase I (Warm Up Round, Aug 21 - Sep 18, 2023)
+This phase provides participants with an opportunity to familiarize themselves with the competition, CityLearn environment and raise issues bordering on the problem statement, source code, dataset quality and documentation to be addressed by the organizers. A solution example will also be provided so that participants can test the submission process and see their submissions show up on the leaderboard. The submissions and leaderboard in this phase are not taken into account during [Phase II](#phase-2) and subsequent selection of winners in [Phase III](#phase-3).
     
-<a name="phase-2"></a>Phase II (Evaluation Round, Sep 19 - Oct 31, 2023)
-This is the competition round. Participants will be able to see how each of their submissions rank against each other and how their latest submission ranks against other participants’ submissions. At the end of this phase, collection of new submissions will be halted and the final leaderboard and selected winners will be published.
+## <a name="phase-2"></a>Phase II (Evaluation Round, Sep 19 - Oct 31, 2023)
+This is the competition round. Participants will be able to see how each of their submissions rank against each other and how their latest submission ranks against other participants’ submissions in a public leaderboard. There are also changes made to the environment and online evaluation dataset in this phase. At the end of this phase, new submissions will be halted and existing submissions are evaluated against another different dataset but the scores and rankings are kept private and visible to only the challenge organizers.
     
-<a name="phase-3"></a>Phase III (Review Round, Nov 1 - Nov 15, 2023)
-During this phase, the organizers will develop an executive summary of the competition that documents the preparation, winning solutions, challenges faced and lessons learned.
+## <a name="phase-3"></a>Phase III (Review Round, Nov 1 - Nov 15, 2023)
+During this phase, winners will be selected and announced. Also, the organizers will develop an executive summary of the competition that documents the preparation, winning solutions, challenges faced and lessons learned.
 
 #  Getting Started
 1. **Sign up** to join the competition [on the AIcrowd website](https://www.aicrowd.com/challenges/neurips-2023-citylearn-challenge).
